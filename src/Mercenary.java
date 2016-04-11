@@ -1,19 +1,26 @@
+import java.util.ArrayList;
+
 /**
- * Created by Adam on 29/02/2016.
+ * Created by IbraD00 et Adam on 04/03/2016.
  */
 public class Mercenary extends Character {
-    public Mercenary(){
-        type = "Mercenary";
+    public Mercenary(String name) {
+        super(name);
         hp = 100;
         def = 350;
         power = 100;
         force = 0;
         intelligence = 100;
+        type = "Mercenary";
     }
-//    public void physicalAttack(Personnage ennemy){
-//        getPower() - (defEnnemy);
-//    }
-//    public void armedAttack(Personnage ennemy){
-//        getIntelligence() - (defEnnemy);
-//    }
+
+    public ArrayList<String> getAttaks()
+    {
+        ArrayList<String> attaks = new ArrayList<>();
+        attaks.add("armed");
+        attaks.add("physical");
+
+        return attaks;
+    }
+
 }

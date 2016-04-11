@@ -1,21 +1,37 @@
+import java.util.Scanner;
+
 /**
- * Created by Adam on 29/02/2016.
+ * Created by IbraD00 et Adam on 04/03/2016.
  */
 public class Main {
-    public static void main(String[] args) {
-        Player player = new Player();
 
+    public static void main(String[] args)
+    {
         System.out.println("Star Wars: Clone Wars");
-        System.out.println("Votre nom: ");
-        player.playerName();
-        System.out.println("Votre classe ");
-        player.playerClasse();
-        System.out.println("Bonjour " + player.getName() +" le " + player.unit.type);
-        System.out.println(player.unit.type + " Stat " + player.unit.hp);
-        System.out.println("Ohh Enemy");
-        player.lvlUp();
-        System.out.println(player.unit.hp);
-        System.out.println(player.hp);
+        Character hero = initPlayer();
+        initRoom(hero);
+    }
 
+    public static Character initPlayer()
+    {
+        System.out.println("Votre nom: ");
+        String name = Helper.scan();
+        System.out.println("Salut "+name);
+        Character hero = Character.getHero(name);
+
+        return hero;
+    }
+
+    public static void initRoom(Character hero)
+    {
+        System.out.println("Veuillez entrer une zone: ");
+        try
+        {
+            int zone = Integer.parseInt(Helper.scan());
+            Room room = new Room(zone);
+            room.create(hero);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

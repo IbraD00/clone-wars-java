@@ -1,13 +1,27 @@
+import java.util.ArrayList;
+
 /**
- * Created by Adam on 29/02/2016.
+ * Created by IbraD00 et Adam on 04/03/2016.
  */
 public class Jedi extends Character {
-    public Jedi(){
-        type = "Jedi";
-        hp = 100;
-        def = 200;
-        power = 100;
-        force = 200;
-        intelligence = 200;
+    public Jedi(String name) {
+        super(name);
+        this.hp = 100;
+        this.def = 200;
+        this.power = 100;
+        this.force = 200;
+        this.intelligence = 200;
+        this.type = "Jedi";
     }
+
+    public ArrayList<String> getAttaks()
+    {
+        ArrayList<String> attaks = new ArrayList<>();
+        attaks.add("force");
+        attaks.add("physical");
+        attaks.add("armed");
+
+        return attaks;
+    }
+
 }
